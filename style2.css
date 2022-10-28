@@ -1,0 +1,1012 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+footer {
+  min-height: 20%;
+  min-width: 100%;
+  background-color: #3586ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+footer .icons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 0px;
+}
+footer .icons li {
+  list-style: none;
+  transition: 0.2s;
+}
+footer .icons li a {
+  font-size: 3em;
+  margin: 0px 10px;
+  color: white;
+}
+footer .icons li:hover {
+  transform: translateY(-10px);
+}
+footer p {
+  color: white;
+  font-size: 1.2em;
+  margin: 15px;
+  text-align: center;
+}
+footer .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .nav li {
+  padding: 0px 15px;
+  list-style: none;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+footer .nav li a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  display: inline-block;
+}
+footer .nav li:hover {
+  opacity: 1;
+}
+
+footer .wave {
+  background: url(Images/wave.png);
+  min-height: 100px;
+  position: absolute;
+  min-width: 100%;
+  top: -100px;
+  left: 0px;
+  background-size: 1000px 100px;
+}
+@keyframes animate {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+@keyframes animate02 {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+footer .wave#wave1 {
+  z-index: 100;
+  opacity: 1;
+  animation: animate 2s linear infinite;
+}
+footer .wave#wave2 {
+  z-index: 100;
+  opacity: 0.8;
+  animation: animate 2s linear 1s infinite;
+}
+footer .wave#wave3 {
+  z-index: 100;
+  opacity: 0.4;
+  animation: animate02 2s linear infinite;
+}
+footer .wave#wave4 {
+  z-index: 100;
+  opacity: 0.3;
+  animation: animate 2s linear 1s infinite;
+}
+main {
+  min-height: 350vh;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+  flex-wrap: wrap;
+}
+main .frame {
+  min-height: 90vh;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  margin: 5vh;
+  z-index: 2;
+}
+.frame::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(#00ccff, #d400d4);
+  width: 120%;
+  height: 19vh;
+  animation: circle 4s linear infinite;
+}
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0.5%;
+  background: #141637;
+  border-radius: 10px;
+  overflow: hidden;
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* main .gallery {
+  position: absolute;
+  min-height: 89vh;
+  min-width: 89.5vw;
+  background-color: #333;
+  border-radius: 10px;
+} */
+main .intro {
+  min-width: 99%;
+  min-height: 99%;
+  border-radius: 10px;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+main .logo {
+  height: 88vh;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #00ccff;
+  box-sizing: border-box;
+}
+main .teaser {
+  height: 88vh;
+  width: 45%;
+  background-color: #141637;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes rotate {
+  0% {
+    rotate: y 0deg;
+  }
+  48% {
+    rotate: y 0deg;
+  }
+  50% {
+    rotate: y 180deg;
+  }
+  79% {
+    rotate: y 180deg;
+  }
+  80% {
+    rotate: y 0deg;
+  }
+  100% {
+    rotate: y 0deg;
+  }
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-front {
+  background-color: black;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flip-card-back {
+  background-color: #222;
+  color: white;
+  transform: rotateY(180deg);
+}
+.meraz {
+  width: fit-content;
+  font-size: 10vh;
+  color: orangered;
+}
+.moto {
+  font-size: 4vh;
+}
+.para {
+  text-align: center;
+  font-size: 2.5vh;
+}
+.contain {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.reverse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+}
+.twocont {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 65%;
+}
+
+main .smallframe {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background-color: #333;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 5vh;
+  z-index: 2;
+  flex-direction: row;
+}
+.smallframe::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(#00ccff, #d400d4);
+  width: 120%;
+  height: 9vh;
+  animation: circle 4s linear infinite;
+}
+.smallframe::after {
+  content: "";
+  position: absolute;
+  inset: 0.5vh;
+  background: #141637;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.video,
+.videoone {
+  width: 34%;
+  height: 98%;
+  z-index: 1;
+  margin: 0.5vh 0.5vh 0.5vh 0.5vh;
+  overflow: hidden;
+}
+.video {
+  border-left: 4px solid #333;
+  border-bottom-right-radius: 14px;
+  border-top-right-radius: 14px;
+}
+.videoone {
+  border-right: 4px solid #333;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
+}
+.logo20,
+.logoone {
+  width: 50%;
+  height: 100%;
+}
+.logoone {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.real {
+  height: 78%;
+  width: 56%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.realmain {
+  height: 30vh;
+  width: 30vh;
+  margin: 2vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.logo20 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.info,
+.infoone {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: #00ccff;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  padding: 5%;
+}
+.info {
+  align-content: flex-end;
+  text-align: end;
+}
+main .thinframe {
+  height: 14vh;
+  min-width: 30%;
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  margin: 5vh;
+  justify-content: center;
+  align-content: center;
+  z-index: 2;
+}
+.thinframe::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(#00ccff, #d400d4);
+  width: 120%;
+  height: 16vh;
+}
+.thinframe::after {
+  content: "";
+  position: absolute;
+  inset: 0.5vh;
+  background: #141637;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.thinframe h2 {
+  z-index: 2;
+  text-align: center;
+  font-size: 6vw;
+  color: #00ccff;
+}
+#particles-js {
+  width: 100%;
+  height: 350vh;
+  z-index: 1;
+  position: absolute;
+}
+.pics {
+  min-height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15vh;
+}
+.lines {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 3vh 1vw;
+  height: 30vh;
+  width: 85vw;
+  flex-direction: row;
+  align-self: center;
+}
+.pictures {
+  height: 100%;
+  width: 23%;
+  margin: 0 1vw;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  transition: background 0.8s;
+  z-index: 2;
+  border-radius: 8px;
+}
+.pictures h2 {
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.border {
+  height: 95%;
+  width: 95%;
+  border: 3px solid black;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.four {
+  background: url(Images/Rubix\ Cube\ Solver\ Robot.JPG) no-repeat center;
+  background-size: cover;
+}
+.five {
+  background: url(Images/DSC0752.JPG) no-repeat center;
+  background-size: cover;
+}
+.six {
+  background: url(Images/QuadrupedRobot.JPG) no-repeat center;
+  background-size: cover;
+}
+.seven {
+  background: url(Images/ArenaHaste.JPG) no-repeat center;
+  background-size: cover;
+}
+.one {
+  background: url(Images/RoboSoccer.PNG) no-repeat center;
+  background-size: cover;
+}
+.two {
+  background: url(Images/RoBoat3.JPG) no-repeat center;
+  background-size: cover;
+}
+.three {
+  background: url(Images/CoconutTreeClimber.jpg) no-repeat center;
+  background-size: cover;
+}
+.eight {
+  background: url(Images/DSC0041.JPG) no-repeat center;
+  background-size: cover;
+}
+.nine {
+  background: url(Images/DSC0445.JPG) no-repeat center;
+  background-size: cover;
+}
+.ten {
+  background: url(Images/RoboSumo.PNG) no-repeat center;
+  background-size: cover;
+}
+.six:hover {
+  background: url(Images/QuadrupedRobot.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.one:hover {
+  background: url(Images/RoboSoccer.PNG) no-repeat center left;
+  background-size: 200%;
+}
+.two:hover {
+  background: url(Images/RoBoat3.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.three:hover {
+  background: url(Images/CoconutTreeClimber.jpg) no-repeat center left;
+  background-size: 200%;
+}
+.four:hover {
+  background: url(Images/RubixCubeSolverRobot.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.five:hover {
+  background: url(Images/DSC0752.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.seven:hover {
+  background: url(Images/ArenaHaste.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.eight:hover {
+  background: url(Images/DSC0041.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.nine:hover {
+  background: url(Images/DSC0445.JPG) no-repeat center left;
+  background-size: 200%;
+}
+.ten:hover {
+  background: url(Images/RoboSumo.PNG) no-repeat center left;
+  background-size: 200%;
+}
+.pictures:hover h2 {
+  opacity: 1;
+  color: #00ccff;
+}
+.pictures:hover {
+  opacity: 0.6;
+}
+.gif {
+  position: absolute;
+  /* top: 200px;
+  left: 35%; */
+  top: 30%;
+  left: 37.5%;
+
+  width: 22rem;
+  /* z-index: -1; */
+}
+.main_logo {
+  transition: transform 0.2s;
+}
+.main_logo:hover {
+  transform: scale(1.25);
+}
+
+.scitech {
+  position: absolute;
+  z-index: 10;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2.7rem;
+  left: 0;
+  top: 20%;
+  color: #fff;
+}
+.navbar {
+  position: sticky;
+  top: 0%;
+  width: 100%;
+
+  padding-top: 3em;
+  background: rgba(21, 19, 19, 0.9);
+
+  height: 3%;
+  padding-bottom: 2%;
+  padding-left: 32.5%;
+  padding-right: 45%;
+  z-index: 4;
+}
+
+.college {
+  margin-left: 90%;
+  text-align: right;
+  color: #fff;
+}
+
+.heading {
+  position: absolute;
+  top: 20%;
+  height: 4%;
+}
+
+.nav-logo {
+  height: 4rem;
+  width: 4rem;
+
+  -webkit-transition: box-shadow 0.2s ease;
+  -moz-transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  color: #ffb600;
+}
+
+.nav-logo:hover {
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.nav-logo:hover::before {
+  -webkit-transform: scale(0.925);
+  -moz-transform: scale(0.925);
+  -ms-transform: scale(0.925);
+  -o-transform: scale(0.925);
+  transform: scale(0.925);
+  box-shadow: 0 0 0 1px #fff;
+  opacity: 0.5;
+  -webkit-transition: all 0.2s ease;
+}
+.nav-logo:before {
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 25%;
+  bottom: 0;
+  box-shadow: 0 0 0 1px #fff;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+}
+.nav-item {
+  background-image: linear-gradient(to right, #54b3d6, #54b3d6 50%, white 50%);
+  height: 2%;
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding-top: 0.5%;
+  padding-bottom: 0.3%;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item:before {
+  content: "";
+  background: #54b3d6;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 6%;
+  transition: all 0.5s ease-in-out;
+}
+
+.nav-item:hover {
+  background-position: 0;
+}
+
+.nav-item:hover::before {
+  width: 100%;
+}
+
+.nav-link::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: coral;
+  margin: auto;
+  display: block;
+}
+
+nav-link:hover::after {
+  width: 100%;
+  transition: width 0.5s linear;
+}
+.na {
+  position: relative;
+  left: -30vw;
+  font-size: 1.5em;
+}
+@media screen and (max-width: 500px) {
+  main .thinframe {
+    height: 10vw;
+  }
+  .twocont {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  .video,
+  .videoone {
+    width: 98%;
+    height: 50%;
+    border-radius: 10px;
+    border: none;
+  }
+  .info,
+  .infoone {
+    display: none;
+  }
+  main .smallframe {
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+  }
+  .para p {
+    display: none;
+  }
+  .reverse {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+  }
+  main .intro {
+    flex-direction: column-reverse;
+  }
+  main .logo {
+    width: 99%;
+    height: 75vh;
+  }
+  main .teaser {
+    height: 75vh;
+    width: 99%;
+  }
+  .frame::before {
+    width: 10vh;
+    height: 110%;
+  }
+  .flip-card .flip-card-inner {
+    animation: rotate 20s linear 18s infinite;
+  }
+  main .realmain {
+    height: 40vw;
+    width: 40vw;
+  }
+  .meraz {
+    font-size: 9vw;
+  }
+  .moto {
+    font-size: 4vw;
+    margin: 5vh 0vh;
+  }
+  .para {
+    font-size: 3vw;
+  }
+  .navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding-top: 3em;
+    background:rgba(21, 19, 19,0.8);
+    height: 3%;
+    padding-bottom: 4%;
+    padding-left: 64%;
+    padding-right: 35%;
+    z-index: 4;
+}
+.college{
+  display: none;
+}
+.collapse{
+  background-color: transparent;
+}
+}
+@media screen and (min-width: 500px) and (max-width: 600px) {
+  main .thinframe {
+    height: 10vw;
+  }
+  main .intro {
+    flex-direction: column-reverse;
+  }
+  main .logo {
+    width: 99%;
+    height: 75vh;
+  }
+  main .teaser {
+    height: 75vh;
+    width: 99%;
+  }
+  .frame::before {
+    width: 10vh;
+    height: 110%;
+  }
+  .flip-card .flip-card-inner {
+    animation: rotate 20s linear 18s infinite;
+  }
+  main .realmain {
+    height: 40vw;
+    width: 40vw;
+  }
+  .meraz {
+    font-size: 9vw;
+  }
+  .moto {
+    font-size: 4vw;
+    margin: 5vh 0vh;
+  }
+  .para {
+    font-size: 3vw;
+  }
+  .reverse {
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+  }
+  .twocont {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  .video,
+  .videoone {
+    width: 98%;
+    height: 50%;
+    border-radius: 10px;
+    border: none;
+  }
+  .info,
+  .infoone {
+    display: none;
+  }
+  main .smallframe {
+    flex-direction: column;
+    height: 70vh;
+    width: 100%;
+  }
+  .para p {
+    display: none;
+  }
+  .smallframe::before {
+    width: 10vh;
+    height: 120%;
+  }
+  .navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding-top: 3em;
+    background: rgba(21, 19, 19, 0.9);
+    height: 3%;
+    padding-bottom: 4%;
+    padding-left: 64%;
+    padding-right: 35%;
+    z-index: 4;
+}
+.college{
+  display: none;
+}
+.collapse{
+  background-color: rgba(21, 19, 19,0.8);
+}
+}
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  main .thinframe {
+    height: 10vw;
+  }
+  main .realmain {
+    height: 30vh;
+    width: 30vh;
+  }
+  .meraz {
+    font-size: 7vw;
+  }
+  .frame::before {
+    width: 10vh;
+    height: 150%;
+  }
+  .flip-card .flip-card-inner {
+    animation: rotate 20s linear 18s infinite;
+  }
+  .real {
+    height: 30vw;
+    width: 30vw;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  .video,
+  .videoone {
+    width: 60%;
+    height: 99%;
+    border-radius: 10px;
+  }
+  .twocont {
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+  }
+  .moto {
+    font-size: 4vh;
+    margin: 5vh 0vh;
+  }
+  .para p {
+    font-size: 2.5vh;
+    display: none;
+  }
+  .info,
+  .infoone {
+    display: none;
+  }
+  main .smallframe {
+    height: 32vh;
+  }
+  .navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding-top: 3em;
+    background: rgba(21, 19, 19, 0.9);
+    height: 3%;
+    padding-bottom: 4%;
+    padding-left: 64%;
+    padding-right: 35%;
+    z-index: 4;
+}
+.college{
+  display: none;
+}
+.collapse{
+  background-color: rgba(21, 19, 19,0.8);
+}
+}
+@media screen and (min-width: 800px) and (max-width: 1000px) {
+  main .smallframe {
+    height: 30vh;
+  }
+  .video,
+  .videoone {
+    width: 45%;
+    height: 99%;
+    border-radius: 10px;
+  }
+  .video {
+    margin-left: 10%;
+  }
+  .videoone {
+    margin-right: 10%;
+  }
+  .detail {
+    display: none;
+  }
+  .twocont {
+    width: 45%;
+    height: 100%;
+  }
+  .info {
+    margin-right: 3vw;
+  }
+  .infoone {
+    margin-left: 3vw;
+  }
+  .navbar {
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    padding-top: 3em;
+    background: rgba(21, 19, 19, 0.9);
+    height: 3%;
+    padding-bottom: 4%;
+    padding-left: 64%;
+    padding-right: 35%;
+    z-index: 4;
+}
+.college{
+  display: none;
+}
+.collapse{
+  background-color: rgba(21, 19, 19,0.8);
+}
+}
